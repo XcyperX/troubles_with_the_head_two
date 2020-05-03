@@ -20,7 +20,7 @@ public class ResourceAnalysis {
 
     private int energyCosts;
 
-    private double efficiency;
+    private float efficiency;
 
     public ResourceAnalysis(int price, int technologies, int weight, int reliability, int design, int degreeOfDamping, int durability, int easeOfRepair, int energyCosts) {
         this.price = price;
@@ -113,7 +113,7 @@ public class ResourceAnalysis {
         return efficiency;
     }
 
-    public void setEfficiency(double efficiency) {
+    public void setEfficiency(float efficiency) {
         this.efficiency = efficiency;
     }
 }
