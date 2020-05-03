@@ -1,8 +1,8 @@
-package service.impl;
+package service;
 
 import model.FunctionalRA;
 
-public class FunctionalResourceAnalysis {
+public class FunctionalResourceAnalysisService {
 
     public FunctionalRA getValueFromFunctionConvolution(FunctionalRA functionalRA) {
         functionalRA.setConvolutionFunctionsNumber1(functionalRA.getTheMostImportantUseful().getPercent());
