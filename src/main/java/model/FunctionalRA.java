@@ -21,6 +21,11 @@ public class FunctionalRA {
         this.useful = useful;
     }
 
+    public FunctionalRA(String element, String mainFunctionElement) {
+        this.element = element;
+        this.mainFunctionElement = mainFunctionElement;
+    }
+
     public FunctionalRA() {
     }
 

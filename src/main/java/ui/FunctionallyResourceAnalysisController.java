@@ -1,5 +1,6 @@
 package ui;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -8,10 +9,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import model.FunctionalRA;
 import service.FunctionalResourceAnalysisService;
 
@@ -41,50 +44,57 @@ public class FunctionallyResourceAnalysisController {
 
     @FXML
     void onAddRowButtonClick(ActionEvent event) {
-        this.functionalRAArrayList = listViewObjects.getItems();
-        this.functionalRAArrayList.add(new FunctionalRA());
-        loadObjectsInListView();
-    }
-
-    @FXML
-    void onCalculateButtonClick(ActionEvent event) {
-        if (this.selectObject == null) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Ошибка");
-            alert.setHeaderText(null);
-            alert.setContentText("Вы не выбрали строку!");
-            alert.show();
-        } else if (this.selectObject.getElement().equals("") && this.selectObject.getMainFunctionElement().equals("") &&
-                   this.selectObject.getTheMostImportantUseful() == null && this.selectObject.getUseful() == null){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Ошибка");
-            alert.setHeaderText(null);
-            alert.setContentText("Вы не заполнили все поля!");
-            alert.show();
-        } else {
-            FunctionalResourceAnalysisService functionalResourceAnalysisService = new FunctionalResourceAnalysisService();
-            this.functionalRAArrayList.remove(this.selectObject);
-            this.selectObject = functionalResourceAnalysisService.getValueFromFunctionConvolution(this.selectObject);
-            this.functionalRAArrayList.add(this.selectObject);
-            loadObjectsInListView();
+        Parent root = null;
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/views/AddRowMenu.fxml"));
+            root = loader.load();
+            Stage addRowMenu = new Stage();
+            addRowMenu.setTitle("Добавить строку");
+            addRowMenu.initModality(Modality.APPLICATION_MODAL);
+            addRowMenu.setScene(new Scene(root));
+            AddRowMenuController addRowMenuController = loader.getController();
+            addRowMenuController.setParent(this);
+            addRowMenu.show();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
     @FXML
-    void initialize() {
-        selectObject();
+    void onCalculateButtonClick(ActionEvent event) {
+        for (FunctionalRA functionalRA : this.functionalRAArrayList) {
+            if (functionalRA.getElement().equals("") && functionalRA.getMainFunctionElement().equals("") &&
+                    functionalRA.getTheMostImportantUseful() == null && functionalRA.getUseful() == null) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Ошибка");
+                alert.setHeaderText(null);
+                alert.setContentText("Вы не заполнили все поля!");
+                alert.show();
+            }
+        }
+        for (FunctionalRA functionalRA : this.functionalRAArrayList){
+            FunctionalResourceAnalysisService functionalResourceAnalysisService = new FunctionalResourceAnalysisService();
+            this.functionalRAArrayList.remove(functionalRA);
+            functionalResourceAnalysisService.getValueFromFunctionConvolution(functionalRA);
+            this.functionalRAArrayList.add(functionalRA);
+        }
         loadObjectsInListView();
     }
 
-    public void loadObjectsInListView() {
-        listViewObjects.setItems(this.functionalRAArrayList);
+    @FXML
+    void initialize() {
+        loadObjectsInListView();
         listViewObjects.setCellFactory(objectsListView -> new RowFunctionallyResourceAnalysis());
     }
 
-    private void selectObject() {
-        listViewObjects.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            this.selectObject = newValue;
-            System.out.println(this.selectObject.getElement());
-        });
+    public void loadObjectsInListView() {
+        listViewObjects.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+        listViewObjects.setItems(this.functionalRAArrayList);
     }
+
+    public void addObject(FunctionalRA functionalRA) {
+        functionalRAArrayList.add(functionalRA);
+    }
+
 }

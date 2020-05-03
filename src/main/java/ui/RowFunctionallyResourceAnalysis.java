@@ -48,6 +48,7 @@ public class RowFunctionallyResourceAnalysis extends ListCell<FunctionalRA> {
 
     private FXMLLoader mLLoader;
 
+
     @Override
     protected void updateItem(FunctionalRA object, boolean empty) {
         super.updateItem(object, empty);
@@ -83,4 +84,6 @@ public class RowFunctionallyResourceAnalysis extends ListCell<FunctionalRA> {
             setGraphic(anchor);
         }
     }
+
+
 }
