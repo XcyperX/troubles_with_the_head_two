@@ -1,7 +1,4 @@
 package ui;
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -9,11 +6,17 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.control.ListCell;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import model.FunctionalRA;
 import model.TypeOfFunctionObject;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.Arrays;
+import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
 public class RowFunctionallyResourceAnalysis extends ListCell<FunctionalRA> {
     @FXML
@@ -32,10 +35,10 @@ public class RowFunctionallyResourceAnalysis extends ListCell<FunctionalRA> {
     private TextField mainFunctionsElement;
 
     @FXML
-    private ComboBox<TypeOfFunctionObject> theMostImportantUsefulComboBox;
+    private ComboBox<String> theMostImportantUsefulComboBox;
 
     @FXML
-    private ComboBox<TypeOfFunctionObject> usefulComboBox;
+    private ComboBox<String> usefulComboBox;
 
     @FXML
     private Label convolutionFunctionsOne;
@@ -67,11 +70,11 @@ public class RowFunctionallyResourceAnalysis extends ListCell<FunctionalRA> {
             elementsTextField.setText(object.getElement());
             mainFunctionsElement.setText(object.getMainFunctionElement());
 
-            ObservableList<TypeOfFunctionObject> typeOfFunctionObjects = FXCollections.observableArrayList(TypeOfFunctionObject.values());
+            ObservableList<String> typeOfFunctionObjects = FXCollections.observableArrayList(Arrays.stream(TypeOfFunctionObject.values()).map(TypeOfFunctionObject::getType).collect(Collectors.toList()));
             theMostImportantUsefulComboBox.setItems(typeOfFunctionObjects);
             usefulComboBox.setItems(typeOfFunctionObjects);
-            theMostImportantUsefulComboBox.setValue(object.getTheMostImportantUseful());
-            usefulComboBox.setValue(object.getUseful());
+//            theMostImportantUsefulComboBox.setValue(object.getTheMostImportantUseful().getType());
+//            usefulComboBox.setValue(object.getUseful().getType());
 
             convolutionFunctionsOne.setText(String.valueOf(object.getConvolutionFunctionsNumber1()));
             convolutionFunctionsTwo.setText(String.valueOf(object.getConvolutionFunctionsNumber2()));
