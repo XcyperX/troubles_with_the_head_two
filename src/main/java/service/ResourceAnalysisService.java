@@ -17,15 +17,15 @@ public class ResourceAnalysisService {
         }
         for (ResourceAnalysis ra : resourceAnalysisList) {
             ra.setEfficiency(
-                    (1 - ra.getPrice() / maxPrice)
+                    (1 - (float) ra.getPrice() / maxPrice)
                             + ra.getTechnologies()
-                            + (1 - ra.getWeight() / maxWeight)
+                            + (1 - (float) ra.getWeight() / maxWeight)
                             + ra.getReliability()
                             + ra.getDesign()
                             + ra.getDegreeOfDamping()
                             + ra.getDurability()
                             + ra.getEaseOfRepair()
-                            + (1 - ra.getEnergyCosts() / maxEnergyCosts)
+                            + (1 - (float) ra.getEnergyCosts() / maxEnergyCosts)
             );
         }
         return resourceAnalysisList;
