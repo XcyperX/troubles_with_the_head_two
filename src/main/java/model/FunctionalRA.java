@@ -76,4 +76,16 @@ public class FunctionalRA {
     public void setConvolutionFunctionsNumber2(double convolutionFunctionsNumber2) {
         this.convolutionFunctionsNumber2 = convolutionFunctionsNumber2;
     }
+
+    @Override
+    public String toString() {
+        return "FunctionalRA{" +
+                "element='" + element + '\'' +
+                ", mainFunctionElement='" + mainFunctionElement + '\'' +
+                ", theMostImportantUseful=" + theMostImportantUseful +
+                ", useful=" + useful +
+                ", convolutionFunctionsNumber1=" + convolutionFunctionsNumber1 +
+                ", convolutionFunctionsNumber2=" + convolutionFunctionsNumber2 +
+                '}';
+    }
 }
