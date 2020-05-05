@@ -2,6 +2,8 @@ package model;
 
 public class ResourceAnalysis {
 
+    private String name;
+
     private int price;
 
     private int technologies;
@@ -22,7 +24,8 @@ public class ResourceAnalysis {
 
     private float efficiency;
 
-    public ResourceAnalysis(int price, int technologies, int weight, int reliability, int design, int degreeOfDamping, int durability, int easeOfRepair, int energyCosts) {
+    public ResourceAnalysis(String name, int price, int technologies, int weight, int reliability, int design, int degreeOfDamping, int durability, int easeOfRepair, int energyCosts) {
+        this.name = name;
         this.price = price;
         this.technologies = technologies;
         this.weight = weight;
@@ -35,6 +38,10 @@ public class ResourceAnalysis {
     }
 
     public ResourceAnalysis() {
+    }
+
+    public String getName() {
+        return name;
     }
 
     public int getPrice() {
