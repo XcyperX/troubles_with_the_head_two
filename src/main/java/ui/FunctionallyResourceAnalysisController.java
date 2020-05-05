@@ -40,8 +40,6 @@ public class FunctionallyResourceAnalysisController {
 
     private ObservableList<FunctionalRA> functionalRAArrayList = FXCollections.observableArrayList();
 
-    private FunctionalRA selectObject;
-
     @FXML
     void onAddRowButtonClick(ActionEvent event) {
         Parent root = null;

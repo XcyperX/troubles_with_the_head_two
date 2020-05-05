@@ -23,28 +23,26 @@ public class RowFunctionallyResourceAnalysis extends ListCell<FunctionalRA> {
     private ResourceBundle resources;
 
     @FXML
-    private URL location;
-
-    @FXML
     private AnchorPane anchor;
 
     @FXML
-    private TextField elementsTextField;
+    private Label elementsLabel;
 
     @FXML
-    private TextField mainFunctionsElement;
+    private Label mainFunctionsElementLabel;
 
     @FXML
-    private ComboBox<String> theMostImportantUsefulComboBox;
+    private Label theMostImportantUsefulLabel;
 
     @FXML
-    private ComboBox<String> usefulComboBox;
+    private Label usefulLabel;
 
     @FXML
     private Label convolutionFunctionsOne;
 
     @FXML
     private Label convolutionFunctionsTwo;
+
 
     private FXMLLoader mLLoader;
 
@@ -68,15 +66,10 @@ public class RowFunctionallyResourceAnalysis extends ListCell<FunctionalRA> {
                     e.printStackTrace();
                 }
             }
-            elementsTextField.setText(object.getElement());
-            mainFunctionsElement.setText(object.getMainFunctionElement());
-
-            ObservableList<String> typeOfFunctionObjects = FXCollections.observableArrayList(Arrays.stream(TypeOfFunctionObject.values()).map(TypeOfFunctionObject::getType).collect(Collectors.toList()));
-            theMostImportantUsefulComboBox.setItems(typeOfFunctionObjects);
-            usefulComboBox.setItems(typeOfFunctionObjects);
-//            theMostImportantUsefulComboBox.setValue(object.getTheMostImportantUseful().getType());
-//            usefulComboBox.setValue(object.getUseful().getType());
-
+            elementsLabel.setText(object.getElement());
+            mainFunctionsElementLabel.setText(object.getMainFunctionElement());
+            theMostImportantUsefulLabel.setText(object.getTheMostImportantUseful().getType());
+            usefulLabel.setText(object.getUseful().getType());
             convolutionFunctionsOne.setText(String.valueOf(object.getConvolutionFunctionsNumber1()));
             convolutionFunctionsTwo.setText(String.valueOf(object.getConvolutionFunctionsNumber2()));
 

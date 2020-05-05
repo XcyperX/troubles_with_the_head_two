@@ -1,12 +1,13 @@
 package service;
 
+import javafx.collections.ObservableList;
 import model.ResourceAnalysis;
 
 import java.util.List;
 
 public class ResourceAnalysisService {
 
-    public List<ResourceAnalysis> getEfficiencies(List<ResourceAnalysis> resourceAnalysisList) {
+    public ObservableList<ResourceAnalysis> getEfficiencies(ObservableList<ResourceAnalysis> resourceAnalysisList) {
         int maxPrice = 0;
         int maxWeight = 0;
         int maxEnergyCosts = 0;

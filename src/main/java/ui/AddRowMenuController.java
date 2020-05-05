@@ -45,19 +45,19 @@ public class AddRowMenuController {
 
     @FXML
     void onAddRowButtonClick(ActionEvent event) {
-        if (elementsTextField.getText().isEmpty() && mainFunctionsElement.getText().isEmpty() &&
-            theMostImportantUsefulComboBox.getSelectionModel().getSelectedItem() == null &&
-            usefulComboBox.getSelectionModel().getSelectedItem() == null) {
+        if (elementsTextField.getText().isEmpty() || mainFunctionsElement.getText().isEmpty() ||
+            theMostImportantUsefulComboBox.getValue() == null ||
+            usefulComboBox.getValue() == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Ошибка");
-                alert.setHeaderText(null);
-                alert.setContentText("Вы не заполнили все поля!");
-                alert.show();
+            alert.setTitle("Ошибка");
+            alert.setHeaderText(null);
+            alert.setContentText("Вы не заполнили все поля!");
+            alert.show();
         } else {
-            FunctionalRA functionalRA = new FunctionalRA(elementsTextField.getText(), mainFunctionsElement.getText(),
-                    TypeOfFunctionObject.valueOf(theMostImportantUsefulComboBox.getValue()),
-                    TypeOfFunctionObject.valueOf(usefulComboBox.getValue()));
             FunctionalResourceAnalysisService functionalResourceAnalysisService = new FunctionalResourceAnalysisService();
+            FunctionalRA functionalRA = new FunctionalRA(elementsTextField.getText(), mainFunctionsElement.getText(),
+                    functionalResourceAnalysisService.getFunctionalObjectByString(theMostImportantUsefulComboBox.getSelectionModel().getSelectedItem()),
+                    functionalResourceAnalysisService.getFunctionalObjectByString(usefulComboBox.getSelectionModel().getSelectedItem()));
             functionalRA = functionalResourceAnalysisService.getValueFromFunctionConvolution(functionalRA);
             functionallyResourceAnalysisController.addObject(functionalRA);
             functionallyResourceAnalysisController.loadObjectsInListView();

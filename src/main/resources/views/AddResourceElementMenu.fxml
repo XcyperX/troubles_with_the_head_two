@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.AddResourceElementController">
+   <children>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" prefHeight="185.0" prefWidth="1080.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Label alignment="CENTER" maxWidth="200.0" minWidth="120.0" prefWidth="120.0" text="Элемент" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <VBox alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label alignment="CENTER" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" text="Критерии">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <GridPane VBox.vgrow="ALWAYS">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="147.0" minHeight="10.0" prefHeight="138.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="29.0" minHeight="0.0" prefHeight="21.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label alignment="CENTER" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" rotate="-90.0" text="Стоимость" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" rotate="-90.0" text="Технологичность" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" rotate="-90.0" text="Вес" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" rotate="-90.0" text="Надежность" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" rotate="-90.0" text="Дизайн" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" rotate="-90.0" text="Степень демпфирования" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" rotate="-90.0" text="Долговечность" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" rotate="-90.0" text="Удобство ремонта" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" rotate="-90.0" text="Затраты энергии" wrapText="true" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.vgrow="ALWAYS">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label text="B min" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label text="B max" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label text="B min" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label text="B min" textAlignment="CENTER" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label text="B max" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label text="B max" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label text="B max" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label text="B max" textAlignment="CENTER" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label text="B max" textAlignment="CENTER" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </GridPane>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="200.0">
+         <children>
+            <TextField fx:id="elementName" maxWidth="200.0" minWidth="120.0" prefHeight="25.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+            </TextField>
+            <TextField fx:id="price" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" HBox.hgrow="ALWAYS" />
+            <TextField fx:id="manufacturability" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" HBox.hgrow="ALWAYS" />
+            <TextField fx:id="weight" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" HBox.hgrow="ALWAYS" />
+            <TextField fx:id="reliability" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" HBox.hgrow="ALWAYS" />
+            <TextField fx:id="design" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" HBox.hgrow="ALWAYS" />
+            <TextField fx:id="degreeDamping" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" HBox.hgrow="ALWAYS" />
+            <TextField fx:id="durability" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" HBox.hgrow="ALWAYS" />
+            <TextField fx:id="easeRepair" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" HBox.hgrow="ALWAYS" />
+            <TextField fx:id="energyCosts" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+         <children>
+            <Button fx:id="addElement" mnemonicParsing="false" onAction="#onAddElementButtonClick" text="Добавить элемент">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

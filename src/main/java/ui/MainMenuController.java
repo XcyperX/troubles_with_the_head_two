@@ -43,7 +43,18 @@ public class MainMenuController {
 
     @FXML
     void onResourceAnalysisButtonClick(ActionEvent event) {
-
+        Stage mainWindow = (Stage) functionalResourceAnalysis.getScene().getWindow();
+        mainWindow.close();
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/views/ResourceAnalysisMenu.fxml"));
+            Stage adminWindow = new Stage();
+            adminWindow.setScene(new Scene(root));
+            adminWindow.setTitle("Ресусный анализ");
+            adminWindow.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

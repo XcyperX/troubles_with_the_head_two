@@ -92,11 +92,6 @@
                   <Insets right="10.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="calculateButton" mnemonicParsing="false" onAction="#onCalculateButtonClick" text="Рассчитать">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
          </children>
       </HBox>
    </children>
