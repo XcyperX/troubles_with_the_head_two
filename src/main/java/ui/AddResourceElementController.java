@@ -59,7 +59,16 @@ public class AddResourceElementController {
         if (elementName.getText().isEmpty() || price.getText().isEmpty() || manufacturability.getText().isEmpty() ||
                 weight.getText().isEmpty() || reliability.getText().isEmpty() || design.getText().isEmpty() ||
                 degreeDamping.getText().isEmpty() || durability.getText().isEmpty() || easeRepair.getText().isEmpty() ||
-                energyCosts.getText().isEmpty()) {
+                energyCosts.getText().isEmpty() ||
+                Integer.parseInt(price.getText()) < 1 || Integer.parseInt(price.getText()) > 10 ||
+                Integer.parseInt(manufacturability.getText()) < 1 || Integer.parseInt(manufacturability.getText()) > 10 ||
+                Integer.parseInt(weight.getText()) < 1 || Integer.parseInt(weight.getText()) > 10 ||
+                Integer.parseInt(reliability.getText()) < 1 || Integer.parseInt(reliability.getText()) > 10 ||
+                Integer.parseInt(design.getText()) < 1 || Integer.parseInt(design.getText()) > 10 ||
+                Integer.parseInt(degreeDamping.getText()) < 1 || Integer.parseInt(degreeDamping.getText()) > 10 ||
+                Integer.parseInt(durability.getText()) < 1 || Integer.parseInt(durability.getText()) > 10 ||
+                Integer.parseInt(easeRepair.getText()) < 1 || Integer.parseInt(easeRepair.getText()) > 10 ||
+                Integer.parseInt(energyCosts.getText()) < 1 || Integer.parseInt(energyCosts.getText()) > 10) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Ошибка");
             alert.setHeaderText(null);
